@@ -1,6 +1,6 @@
 import { createStitches, ScaleValue } from '@stitches/react'
 import { indigo, gray, indigoDark, grayDark } from '@radix-ui/colors'
-const convertToRem = (value: number) => `${value / 16}rem`
+export const convertToRem = (value: number) => `${value / 16}rem`
 
 const space = {
     4: convertToRem(4),
@@ -45,11 +45,20 @@ export const {
         },
         radii: {
             default: '0px',
+            rounded: '16px',
             pill: '999999px'
         },
+
         space,
         sizes: space,
-        fontSizes: fontSize
+        fontSizes: fontSize,
+        zIndices: {
+            default: 0,
+            menubar: 1,
+            modal: 10,
+            overlay: 20,
+            sticky: 30
+        }
     },
     utils: {
         px: (value: ScaleValue<'space'>) => ({
@@ -63,7 +72,7 @@ export const {
     }
 })
 
-export const lightTheme = createTheme({
+export const darkTheme = createTheme({
     colors: {
         ...indigo,
         ...gray

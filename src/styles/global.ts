@@ -19,6 +19,7 @@ export const globalStyles = globalCss({
         }
     },
     body: {
+        margin: '0 auto',
         fontFamily: '$normal',
         fontWeight: 500,
         backgroundColor: '$gray3',
